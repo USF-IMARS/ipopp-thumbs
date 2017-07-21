@@ -3,6 +3,7 @@
 #This is the file to gnerate thumbnails for true color images. Run this on thing1 and mount the imars_data folder
 
 debug=false
+imars_data_loc=/imars_data/pub
 areas=( gcoos east_caribbean west_caribbean argentina_egi argentina_epea argentina_patagonia argentina_san_jorge brazil_se brazil_south chile_central chile_chiloe chile_north chile_south venezuela_scar seacoos argentina_bahia )
 today=$(date +%Y%m%d)
 #today=20170416
@@ -95,10 +96,10 @@ genrate_thumb_for_area() {
 for area in "${areas[@]}"
 do
 	echo $area
-	targetFolderModis=/imars_data/pub/modis/imars/final/pass/1km/crefl_rgb/$area/$(date +%Y).$(date +%m)
-	targetFolderViirs=/imars_data/pub/viirs/imars/final/pass/1km/mcrefl_rgb/$area/$(date +%Y).$(date +%m)
-	yesterdayModis=/imars_data/pub/modis/imars/final/pass/1km/crefl_rgb/$area/$(date --date="yesterday" +%Y).$(date --date="yesterday" +%m)
-	yesterdayViirs=/imars_data/pub/viirs/imars/final/pass/1km/mcrefl_rgb/$area/$(date --date="yesterday" +%Y).$(date --date="yesterday" +%m)
+	targetFolderModis=$imars_data_loc/modis/imars/final/pass/1km/crefl_rgb/$area/$(date +%Y).$(date +%m)
+	targetFolderViirs=$imars_data_loc/viirs/imars/final/pass/1km/mcrefl_rgb/$area/$(date +%Y).$(date +%m)
+	yesterdayModis=$imars_data_loc/modis/imars/final/pass/1km/crefl_rgb/$area/$(date --date="yesterday" +%Y).$(date --date="yesterday" +%m)
+	yesterdayViirs=$imars_data_loc/viirs/imars/final/pass/1km/mcrefl_rgb/$area/$(date --date="yesterday" +%Y).$(date --date="yesterday" +%m)
 
 	if [ -d $targetFolderModis ]
 	then
