@@ -3,7 +3,7 @@
 #This is the file to gnerate thumbnails for true color images. Run this on thing1 and mount the imars_data folder
 
 debug=false
-imars_data_loc=/imars_data/pub
+imars_data_loc=/mnt/thing3ipoppdata
 areas=( gcoos east_caribbean west_caribbean argentina_egi argentina_epea argentina_patagonia argentina_san_jorge brazil_se brazil_south chile_central chile_chiloe chile_north chile_south venezuela_scar seacoos argentina_bahia )
 today=$(date +%Y%m%d)
 #today=20170416
